@@ -19,11 +19,11 @@ import { categories } from '../bucket/category';
 
 const table = tableSchemas.auth.users;
 
-const sexEnum = pgEnum(table.fields.sex, sex);
+export const sexEnum = pgEnum(table.fields.sex, sex);
 
-const roleEnum = pgEnum(table.fields.role, roles);
+export const roleEnum = pgEnum(table.fields.role, roles);
 
-const providerEnum = pgEnum(table.fields.provider, providers);
+export const providerEnum = pgEnum(table.fields.provider, providers);
 
 export const users = pgTable(
   table.name,

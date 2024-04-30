@@ -1,6 +1,6 @@
 {
-  "id": "4dbd0634-2668-467f-801c-3c2a39a5bbd5",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "f73ff6bd-855f-45a4-80be-da0e28750142",
+  "prevId": "4dbd0634-2668-467f-801c-3c2a39a5bbd5",
   "version": "5",
   "dialect": "pg",
   "tables": {
@@ -342,7 +342,37 @@
       }
     }
   },
-  "enums": {},
+  "enums": {
+    "provider": {
+      "name": "provider",
+      "values": {
+        "email": "email",
+        "google": "google",
+        "github": "github",
+        "discord": "discord",
+        "line": "line",
+        "facebook": "facebook"
+      }
+    },
+    "role": {
+      "name": "role",
+      "values": {
+        "guest": "guest",
+        "client": "client",
+        "demo": "demo",
+        "developer": "developer",
+        "admin": "admin"
+      }
+    },
+    "sex": {
+      "name": "sex",
+      "values": {
+        "man": "man",
+        "woman": "woman",
+        "not-set": "not-set"
+      }
+    }
+  },
   "schemas": {},
   "_meta": {
     "columns": {},
