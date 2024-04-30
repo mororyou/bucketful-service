@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "bucketful-service",
   "private": true,
   "sideEffects": false,
   "type": "module",
@@ -12,6 +12,7 @@
     "format": "prettier --write .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "prepare": "husky install",
     "generate": "drizzle-kit generate:pg",
     "push": "drizzle-kit push:pg",
     "introspect": "drizzle-kit introspect:pg",
@@ -57,13 +58,17 @@
     "autoprefixer": "^10.4.19",
     "drizzle-kit": "^0.20.17",
     "eslint": "^8.38.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-drizzle": "^0.2.3",
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.8.0",
+    "husky": "^8.0.0",
     "jsdom": "^24.0.0",
+    "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
     "prettier-plugin-organize-imports": "^3.2.4",
     "prettier-plugin-tailwindcss": "^0.5.14",
@@ -76,5 +81,10 @@
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }

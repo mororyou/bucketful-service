@@ -1,9 +1,16 @@
-import { boolean, index, timestamp, uuid } from 'drizzle-orm/pg-core';
+import {
+  boolean,
+  date,
+  index,
+  pgEnum,
+  timestamp,
+  uuid,
+  varchar,
+} from 'drizzle-orm/pg-core';
 import { tableSchemas } from '~com/schemas/fields';
 import { pgTable } from '../_table';
 
 import { relations } from 'drizzle-orm';
-import { date, pgEnum, varchar } from 'drizzle-orm/pg-core';
 import { providers } from '~com/schemas/fields/enum/provider';
 import { roles } from '~com/schemas/fields/enum/role';
 import { sex } from '~com/schemas/fields/enum/sex';

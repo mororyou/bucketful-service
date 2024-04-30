@@ -89,9 +89,7 @@
       "indexes": {
         "bucket_id_idx": {
           "name": "bucket_id_idx",
-          "columns": [
-            "id"
-          ],
+          "columns": ["id"],
           "isUnique": false
         }
       },
@@ -160,9 +158,7 @@
       "indexes": {
         "category_id_idx": {
           "name": "category_id_idx",
-          "columns": [
-            "id"
-          ],
+          "columns": ["id"],
           "isUnique": false
         }
       },
@@ -225,9 +221,7 @@
       "indexes": {
         "task_id_idx": {
           "name": "task_id_idx",
-          "columns": [
-            "id"
-          ],
+          "columns": ["id"],
           "isUnique": false
         }
       },
@@ -323,9 +317,7 @@
       "indexes": {
         "user_id_idx": {
           "name": "user_id_idx",
-          "columns": [
-            "id"
-          ],
+          "columns": ["id"],
           "isUnique": false
         }
       },
@@ -335,9 +327,7 @@
         "bucketful_users_email_unique": {
           "name": "bucketful_users_email_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "email"
-          ]
+          "columns": ["email"]
         }
       }
     }
