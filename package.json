@@ -10,7 +10,10 @@
     "start": "remix-serve ./build/server/index.js",
     "typecheck": "tsc",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "generate": "drizzle-kit generate:pg",
+    "push": "drizzle-kit push:pg",
+    "introspect": "drizzle-kit introspect:pg"
   },
   "dependencies": {
     "@remix-run/node": "^2.9.1",
