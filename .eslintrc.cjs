@@ -23,18 +23,22 @@ module.exports = {
 
   // Base config
   extends: ['eslint:recommended', 'plugin:storybook/recommended', 'prettier'],
+
   overrides: [
     // React
     {
       files: ['**/*.{js,jsx,ts,tsx}'],
-      plugins: ['react', 'jsx-a11y', '@tanstack/query'],
+      plugins: ['react', 'jsx-a11y'],
       extends: [
         'plugin:react/recommended',
         'plugin:react/jsx-runtime',
         'plugin:react-hooks/recommended',
         'plugin:jsx-a11y/recommended',
-        'plugin:@tanstack/eslint-plugin-query/recommended',
       ],
+      rules: {
+        'react/prop-types': 'off',
+        'jsx-a11y/heading-has-content': 'off',
+      },
       settings: {
         react: {
           version: 'detect',
@@ -71,9 +75,6 @@ module.exports = {
         'plugin:import/recommended',
         'plugin:import/typescript',
       ],
-      rules: {
-        'import/no-duplicates': 'error',
-      },
     },
 
     // Node
