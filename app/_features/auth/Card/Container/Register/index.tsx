@@ -1,19 +1,21 @@
 import { getFormProps, getInputProps, useForm } from '@conform-to/react';
 import { parseWithZod } from '@conform-to/zod';
-import { Form } from '@remix-run/react';
+import { Form, useActionData } from '@remix-run/react';
 import { Button } from '~app/components/atoms/forms/button';
 import { CardContent } from '~app/components/molecules/card';
 import ErrorLabels from '~app/components/molecules/forms/errors';
 import InputWithLabel from '~app/components/molecules/forms/input-with-label';
 import PasswordWithLabel from '~app/components/molecules/forms/password-with-label';
 import { useIsPending } from '~app/hooks/useIsPending';
+import { action } from '~app/routes/_auth.register/route';
 import { AuthRegisterValidation } from '~com/validations/auth/register';
 
 export default function AuthCardRegisterContainer() {
   const isPending = useIsPending();
+  const actionData = useActionData<typeof action>();
   const [form, { name, email, password, confirmPassword }] = useForm({
     id: 'auth-register-form',
-    lastResult: null,
+    lastResult: actionData,
     onValidate({ formData }) {
       return parseWithZod(formData, { schema: AuthRegisterValidation });
     },
