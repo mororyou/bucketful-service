@@ -31,6 +31,6 @@ export async function loginMailAccount(
 
     return userWithoutPassword;
   } catch (error: unknown) {
-    console.error(error);
+    throw new Error('ログインに失敗しました。');
   }
 }
