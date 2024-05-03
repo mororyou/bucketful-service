@@ -1,17 +1,15 @@
 import bcrypt from 'bcrypt';
 import { AuthorizationError } from 'remix-auth';
 import getUserDataService from '~api/services/produce-public/user/getDataService';
-import { AuthUser, Providers } from '~com/schemas/types/user';
+import { AuthUser } from '~com/schemas/types/user';
 
 export async function loginMailAccount(
   email: FormDataEntryValue,
   password: FormDataEntryValue,
-  provider: Providers,
 ): Promise<AuthUser | undefined> {
   try {
     const user = await getUserDataService({
       email: String(email),
-      provider,
     });
 
     if (!user) {

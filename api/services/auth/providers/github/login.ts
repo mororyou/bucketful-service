@@ -10,7 +10,6 @@ export async function loginGithubAccount(profile: GitHubProfile) {
 
     const user = await getUserDataService({
       email: profile.emails[0].value,
-      provider: 'github',
     });
 
     if (!user) return null;

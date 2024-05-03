@@ -10,7 +10,6 @@ export async function loginDiscordAccount(profile: DiscordProfile) {
 
     const user = await getUserDataService({
       email: profile.emails[0].value,
-      provider: 'discord',
     });
 
     if (!user) return null;

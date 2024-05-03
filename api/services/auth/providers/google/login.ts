@@ -10,7 +10,6 @@ export async function loginGoogleAccount(profile: GoogleProfile) {
 
     const user = await getUserDataService({
       email: profile.emails[0].value,
-      provider: 'google',
     });
 
     if (!user) return null;
