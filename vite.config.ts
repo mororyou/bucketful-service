@@ -7,4 +7,5 @@ installGlobals();
 
 export default defineConfig({
   plugins: [remix(), tsconfigPaths()],
+  optimizeDeps: { exclude: ['@mapbox/node-pre-gyp'] },
 });
