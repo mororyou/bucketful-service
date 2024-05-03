@@ -18,7 +18,7 @@ export default function AuthCardFooter({
           btnClassName="w-full"
           variant="outline"
           name="_action"
-          form={mode === 'Login' ? 'sns-login-form' : 'sns-register-form'}
+          form="sns-login-form"
           type="submit"
           value="user-google"
           leftIcon={
@@ -31,7 +31,7 @@ export default function AuthCardFooter({
           btnClassName="w-full"
           variant="default"
           name="_action"
-          form={mode === 'Login' ? 'sns-login-form' : 'sns-register-form'}
+          form="sns-login-form"
           type="submit"
           value="user-discord"
           leftIcon={
@@ -44,7 +44,7 @@ export default function AuthCardFooter({
           btnClassName="w-full"
           variant="outline"
           name="_action"
-          form={mode === 'Login' ? 'sns-login-form' : 'sns-register-form'}
+          form="sns-login-form"
           type="submit"
           value="user-github"
           leftIcon={

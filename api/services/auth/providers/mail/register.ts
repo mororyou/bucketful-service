@@ -26,7 +26,7 @@ export async function registerMailAccount({
       throw new Error('パスワードが一致しません。');
 
     // SETP1: メールアドレスが既に登録されているか確認
-    const exists = await getUserDataService({ email: String(email), provider });
+    const exists = await getUserDataService({ email: String(email) });
     if (exists) {
       if (exists.leave) {
         throw new Error('退会済みユーザーです。');
