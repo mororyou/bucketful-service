@@ -1,6 +1,7 @@
 import { LoaderFunctionArgs, json } from '@remix-run/node';
 import { Outlet, useLoaderData, useOutletContext } from '@remix-run/react';
 import { authenticator } from '~api/services/auth/auth.server';
+import DashboardLayout from '~app/_features/dashboard/layout';
 import { failureRedirectLoginUrl } from '~com/constants/configs';
 import { AuthUser } from '~com/schemas/types/user';
 
@@ -19,5 +20,9 @@ export function useAuthUser() {
 
 export default function DashboardOutlet() {
   const { user } = useLoaderData<typeof loader>();
-  return <Outlet context={user} />;
+  return (
+    <DashboardLayout>
+      <Outlet context={user} />
+    </DashboardLayout>
+  );
 }
