@@ -1,4 +1,6 @@
-export const isProd = process.env.PUBLIC_APP_MODE === 'production';
+export const isProd = 'development';
+
+export const APP_NAME = 'Bucketful';
 
 export const successRedirectUrl = '/dashboard';
 
