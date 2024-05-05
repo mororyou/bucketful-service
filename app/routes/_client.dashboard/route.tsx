@@ -1,8 +1,13 @@
+import DashboardLayout from '~app/_features/dashboard/layout';
 import DashboardContainer from '~app/components/pages/client/dashboard';
 import { useAuthUser } from '../_client/route';
 
 export default function Dashboard() {
   const user = useAuthUser();
   console.log(user);
-  return <DashboardContainer />;
+  return (
+    <DashboardLayout title={'DashBoard'}>
+      <DashboardContainer />
+    </DashboardLayout>
+  );
 }
