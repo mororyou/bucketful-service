@@ -1,6 +1,6 @@
 import DashboardLayout from '~app/_features/dashboard/layout';
 import DashboardContainer from '~app/components/pages/client/dashboard';
-import { useAuthUser } from '../_client/route';
+import { useAuthUser } from '../route';
 
 export default function Dashboard() {
   const user = useAuthUser();
