@@ -48,6 +48,7 @@ export const tableSchemas = {
       name: 'users',
       fields: {
         id: 'id',
+        accountId: 'account_id',
         name: 'name',
         email: 'email',
         password: 'password',

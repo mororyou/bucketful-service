@@ -29,6 +29,9 @@ export const users = pgTable(
   table.name,
   {
     id: uuid(table.fields.id).defaultRandom().notNull().primaryKey(),
+    accountId: varchar(table.fields.accountId, { length: 255 })
+      .notNull()
+      .unique(),
     name: varchar(table.fields.name, { length: 50 }).notNull(),
     email: varchar(table.fields.email, { length: 255 }).notNull().unique(),
     password: varchar(table.fields.password, { length: 255 }).notNull(),
@@ -50,6 +53,7 @@ export const users = pgTable(
 
   (user) => ({
     userIdx: index('user_id_idx').on(user.id),
+    accountIdx: index('account_id_idx').on(user.accountId),
   }),
 );
 
