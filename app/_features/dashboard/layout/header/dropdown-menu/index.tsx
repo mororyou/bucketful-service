@@ -1,3 +1,4 @@
+import { Link } from '@remix-run/react';
 import { Button } from '~app/components/atoms/forms/button';
 import {
   DropdownMenu,
@@ -7,8 +8,11 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '~app/components/organisms/dropdown-menu';
+import { useAuthUser } from '~app/routes/_client/route';
 
 export default function DashboardHeaderDropDownMenu() {
+  const user = useAuthUser();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -17,7 +21,7 @@ export default function DashboardHeaderDropDownMenu() {
             alt="Avatar"
             className="rounded-full"
             height="32"
-            src="/images/avator/default.png"
+            src={user.avator}
             style={{
               aspectRatio: '32/32',
               objectFit: 'cover',
@@ -28,10 +32,20 @@ export default function DashboardHeaderDropDownMenu() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+        <DropdownMenuLabel>
+          <Link to="/setting/profile">My Account</Link>
+        </DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>Settings</DropdownMenuItem>
-        <DropdownMenuItem>Support</DropdownMenuItem>
+        <DropdownMenuItem>
+          <Link to="/setting/profile" className="w-full">
+            Profile
+          </Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem>
+          <Link to="/setting/plan" className="w-full">
+            Plan
+          </Link>
+        </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem>Logout</DropdownMenuItem>
       </DropdownMenuContent>
