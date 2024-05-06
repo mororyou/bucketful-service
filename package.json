@@ -50,6 +50,7 @@
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
     "ts-essentials": "^10.0.0",
+    "ts-pattern": "^5.1.1",
     "use-dehydrated-state": "^0.1.0",
     "zod": "^3.23.5"
   },
@@ -92,6 +93,7 @@
     "prettier": "^3.2.5",
     "prettier-plugin-organize-imports": "^3.2.4",
     "prettier-plugin-tailwindcss": "^0.5.14",
+    "remix-flat-routes": "^0.6.4",
     "storybook": "^8.0.9",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.1.6",
