@@ -7,7 +7,7 @@ import ErrorLabels from '~app/components/molecules/forms/errors';
 import InputWithLabel from '~app/components/molecules/forms/input-with-label';
 import PasswordWithLabel from '~app/components/molecules/forms/password-with-label';
 import { useIsPending } from '~app/hooks/useIsPending';
-import { action } from '~app/routes/_auth.register/route';
+import { action } from '~app/routes/_auth/register/route';
 import { AuthRegisterValidation } from '~com/validations/auth/register';
 
 export default function AuthCardRegisterContainer() {
