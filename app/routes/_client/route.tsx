@@ -1,12 +1,12 @@
 import { LoaderFunctionArgs, json } from '@remix-run/node';
 import { Outlet, useLoaderData, useOutletContext } from '@remix-run/react';
 import { authenticator } from '~api/services/auth/auth.server';
-import { failureRedirectLoginUrl } from '~com/constants/configs';
+import { FAILURE_REDIRECT_LOGIN_URL } from '~com/constants/configs';
 import { AuthUser } from '~com/schemas/types/user';
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const user = (await authenticator.isAuthenticated(request, {
-    failureRedirect: failureRedirectLoginUrl,
+    failureRedirect: FAILURE_REDIRECT_LOGIN_URL,
   })) as AuthUser;
   return json({
     user,

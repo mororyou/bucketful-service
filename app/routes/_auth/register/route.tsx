@@ -4,8 +4,8 @@ import { authenticator } from '~api/services/auth/auth.server';
 import { registerMailAccount } from '~api/services/auth/providers/mail/register';
 import AuthRegistgerContainer from '~app/components/pages/auth/register';
 import {
-  failureRedirectRegisterUrl,
-  successRedirectUrl,
+  FAILURE_REDIRECT_REGISTER_URL,
+  SUCCESS_REDIRECT_URL,
 } from '~com/constants/configs';
 import { AuthRegisterValidation } from '~com/validations/auth/register';
 
@@ -30,14 +30,14 @@ export async function action({ request }: ActionFunctionArgs) {
   }
 
   return await authenticator.authenticate(action, request, {
-    successRedirect: successRedirectUrl,
-    failureRedirect: failureRedirectRegisterUrl,
+    successRedirect: SUCCESS_REDIRECT_URL,
+    failureRedirect: FAILURE_REDIRECT_REGISTER_URL,
   });
 }
 
 export async function loader({ request }: LoaderFunctionArgs) {
   return await authenticator.isAuthenticated(request, {
-    successRedirect: successRedirectUrl,
+    successRedirect: SUCCESS_REDIRECT_URL,
   });
 }
 

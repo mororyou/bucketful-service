@@ -2,8 +2,8 @@ export const isProd = 'development';
 
 export const APP_NAME = 'Bucketful';
 
-export const successRedirectUrl = '/dashboard';
+export const SUCCESS_REDIRECT_URL = '/dashboard';
 
-export const failureRedirectLoginUrl = '/login';
+export const FAILURE_REDIRECT_LOGIN_URL = '/login';
 
-export const failureRedirectRegisterUrl = '/register';
+export const FAILURE_REDIRECT_REGISTER_URL = '/register';
