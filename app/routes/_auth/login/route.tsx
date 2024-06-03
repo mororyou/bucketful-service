@@ -3,8 +3,8 @@ import { ActionFunctionArgs, LoaderFunctionArgs, json } from '@remix-run/node';
 import { authenticator } from '~api/services/auth/auth.server';
 import AuthLoginContainer from '~app/components/pages/auth/login';
 import {
-  failureRedirectLoginUrl,
-  successRedirectUrl,
+  FAILURE_REDIRECT_LOGIN_URL,
+  SUCCESS_REDIRECT_URL,
 } from '~com/constants/configs';
 import { AuthLoginValidation } from '~com/validations/auth/login';
 
@@ -18,15 +18,15 @@ export async function action({ request }: ActionFunctionArgs) {
   }
 
   return await authenticator.authenticate(action, request, {
-    successRedirect: successRedirectUrl,
-    failureRedirect: failureRedirectLoginUrl,
+    successRedirect: SUCCESS_REDIRECT_URL,
+    failureRedirect: FAILURE_REDIRECT_LOGIN_URL,
     context: { formData },
   });
 }
 
 export async function loader({ request }: LoaderFunctionArgs) {
   return await authenticator.isAuthenticated(request, {
-    successRedirect: successRedirectUrl,
+    successRedirect: SUCCESS_REDIRECT_URL,
   });
 }
 
